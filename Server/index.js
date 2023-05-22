@@ -16,7 +16,7 @@ const cors=require('cors');
 
 
 
-mongoose.connect('mongodb://127.0.0.1:27017/CloneTree')
+mongoose.connect('mongodb+srv://adilevy156:rItxYgrzJIAw89WV@cluster0.s8vuyuz.mongodb.net/?retryWrites=true&w=majority')
 .then(()=>console.log('connected to data base'))
 .catch(()=>console.log('couldnt connect to data base '));
 
