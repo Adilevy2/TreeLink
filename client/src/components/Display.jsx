@@ -26,7 +26,6 @@ const Display = () => {
         setData(submit.data)}
         getData()
     }, []);
-    console.log(pageColor)
     return (
         <div>
        <div style={{minHeight:'37.5rem',backgroundColor:pageColor}} className='grid place-items-center absolute w-full'>
