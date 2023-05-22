@@ -32,13 +32,13 @@ const EditLinks = () => {
            else{
                navigate('/')
            }
-        const submit=await axios.get(`http://localhost:4905/api/getUserLinks/${decode.name}`)
+        const submit=await axios.get(`https://treelink.onrender.com/api/getUserLinks/${decode.name}`)
         setData(submit.data)}
         getData()
     }, []);  
 
     const handleDelete=async(id)=>{
-        const submit=await axios.delete(`http://localhost:4905/api/links/${id}`)
+        const submit=await axios.delete(`https://treelink.onrender.com/api/links/${id}`)
         window.location.reload(false);
     }
     const handleChangeColor=async()=>{
@@ -52,7 +52,7 @@ const EditLinks = () => {
             else{
            navigate('/')
        }
-       const submitValues=await axios.put(`http://localhost:4905/api/UpdatePageColor`,{pageColor:pageColor,name:decode.name})
+       const submitValues=await axios.put(`https://treelink.onrender.com/UpdatePageColor`,{pageColor:pageColor,name:decode.name})
        localStorage.setItem('token',submitValues.data)   ;
        window.location.reload(false);
     }
@@ -71,7 +71,7 @@ const EditLinks = () => {
             else{
            navigate('/')
        }
-       const submitValues=await axios.put(`http://localhost:4905/api/updateImage`,{name:decode.name,image:image})
+       const submitValues=await axios.put(`https://treelink.onrender.com/api/updateImage`,{name:decode.name,image:image})
        localStorage.setItem('token',submitValues.data)   ;
        window.location.reload(false);
     }
