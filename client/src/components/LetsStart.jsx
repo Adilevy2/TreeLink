@@ -32,9 +32,9 @@ const LetsStart = () => {
             try{
             for(let i=0;i<inputs.length;i++){
                 const decode=jwtDecode(localStorage.getItem('token'))
-                const submitValues=await axios.post(`http://localhost:4905/api/links`,{nameUser:decode.name,name:inputs[i].name,link:inputs[i].link,description:inputs[i].description})
+                const submitValues=await axios.post(`https://treelink-server.onrender.com/api/links`,{nameUser:decode.name,name:inputs[i].name,link:inputs[i].link,description:inputs[i].description})
               }
-              const submitValues=await axios.put(`http://localhost:4905/api/UpdatePageColor`,{pageColor:pageColor,name:decode.name})
+              const submitValues=await axios.put(`https://treelink-server.onrender.com/api/UpdatePageColor`,{pageColor:pageColor,name:decode.name})
               localStorage.setItem('token',submitValues.data)   
             }
               catch{

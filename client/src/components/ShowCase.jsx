@@ -10,7 +10,7 @@ const ShowCase = () => {
     const navigate=useNavigate()
     useEffect(() => {
         async function getData(){
-        const submit=await axios.get(`http://localhost:4905/api/getUserLinks/${params.name}`)
+        const submit=await axios.get(`https://treelink-server.onrender.com/api/getUserLinks/${params.name}`)
         if(submit.data=='invalid name')
         setData('invalid name')
         setImage(submit.data.image.url)
@@ -21,7 +21,7 @@ const ShowCase = () => {
     const date=new Date()
     const handleClick=async(id)=>{
        
-        const submit=await axios.put(`http://localhost:4905/api/clicks`,{id:id,date:date})
+        const submit=await axios.put(`https://treelink-server.onrender.com/api/clicks`,{id:id,date:date})
     }
    console.log(data)
       return (

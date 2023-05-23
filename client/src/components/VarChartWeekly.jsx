@@ -36,7 +36,7 @@ const VarChartWeekly = () => {
            else{
                navigate('/')
            }
-        const submit=await axios.get(`http://localhost:4905/api/clicksLastWeek/${decode.name}`)
+        const submit=await axios.get(`https://treelink-server.onrender.com/api/clicksLastWeek/${decode.name}`)
         setLinksData(submit.data)
         setMonths(Object.keys( submit.data))
         setLinkClicks(Object.values( submit.data))

@@ -21,7 +21,7 @@ const PieClicks = () => {
              else{
                  navigate('/')
              }
-          const submit=await axios.get(`http://localhost:4905/api/getUserLinks/${decode.name}`)
+          const submit=await axios.get(`https://treelink-server.onrender.com/api/getUserLinks/${decode.name}`)
           setLinksData(submit.data)
           const names=submit.data.links.map(ev=>ev.name)
           const clicks=submit.data.links.map(ev=>ev.numberOfClicks)

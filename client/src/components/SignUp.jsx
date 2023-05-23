@@ -31,7 +31,7 @@ const SignUp = () => {
             e.preventDefault()
             formik.values['image']=image;
             console.log(formik.values)
-            const submit=await axios.post('http://localhost:4905/api/signUp',formik.values)
+            const submit=await axios.post('https://treelink-server.onrender.com/api/signUp',formik.values)
             if(submit.data=='name allready taken')
             return setMessage(<p className="font-medium text-red-500 hover:text-red-600">name allready taken</p>)
             else if(submit.data=='"password" should contain at least 1 numeric character')

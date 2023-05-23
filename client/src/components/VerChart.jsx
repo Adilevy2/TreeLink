@@ -36,7 +36,7 @@ const VerChart = () => {
            else{
                navigate('/')
            }
-        const submit=await axios.get(`http://localhost:4905/api/clicksLastYear/${decode.name}`)
+        const submit=await axios.get(`https://treelink-server.onrender.com/api/clicksLastYear/${decode.name}`)
         setLinksData(submit.data)
         setMonths(Object.keys( submit.data))
         setLinkClicks(Object.values( submit.data))
