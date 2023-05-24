@@ -39,7 +39,9 @@ const SignUp = () => {
             else if(submit.data=='"password" should contain at least 1 uppercase character')
             return setMessage(<p className="font-medium text-red-500 hover:text-red-600">password should contain at least 1 uppercase character</p>)
             else{
-                localStorage.setItem('token',submit.data)   
+                localStorage.setItem('token',JSON.stringify(submit.data)) 
+                console.log(submit.data)
+                console.log(localStorage.getItem('token'))
                 navigate('/letsStart')
             }
         }

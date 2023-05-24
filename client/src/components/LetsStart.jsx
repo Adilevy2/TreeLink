@@ -1,5 +1,5 @@
 import jwtDecode from 'jwt-decode';
-import {React,useState} from 'react';
+import { React, useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import HamburgerMenu from './HamburgerMenu';
@@ -8,6 +8,7 @@ const LetsStart = () => {
   const decode={}
     const [inputs, setInputs] = useState([{ name: "",link:"",description:"" }]);
     const [pageColor, setPageColor] = useState('rgb(64 64 64)');
+    const [name, setName] = useState('');
     const navigate=useNavigate()
 
     const handleChange = (i, event,name) => {
@@ -43,6 +44,21 @@ const LetsStart = () => {
               }
             navigate('/display')
     }
+
+    useEffect(() => {
+      async function getData(){
+        if(localStorage.getItem('token')){
+          console.log((localStorage.getItem('token')))
+          decode=jwtDecode(localStorage.getItem('token'))
+          setName(decode.name)
+        }
+        else{
+          navigate('/')
+        }
+      }
+      getData()
+    }, []);
+    
       return (
         <div>
             <div className='fixed'>
@@ -51,7 +67,7 @@ const LetsStart = () => {
             </div>
             <div style={{minHeight:'37.5rem'}} className='grid place-items-center bg-neutral-700 absolute w-full'>
         <div className='grid place-items-center w-10/12'>
-        <h1 className='text-4xl text-center font-mono font-semibold text-slate-200'>Hello {decode.name}, Lets start your tree </h1>
+        <h1 className='text-4xl text-center font-mono font-semibold text-slate-200'>Hello {name}, Lets start your tree </h1>
         <label className='text-xl mt-6 mb-2 text-center font-mono font-semibold text-slate-200'>First, Let's choose a color for your page(optional)</label>
            <input onChange={(ev)=>setPageColor(ev.target.value)} type='color' className='border-solid border-2 border-slate-400 hover:border-slate-500 rounded-md w-24 h-10'></input>
            <div className='mt-8 w-full '>
