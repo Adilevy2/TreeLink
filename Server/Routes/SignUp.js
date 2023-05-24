@@ -33,7 +33,6 @@ router.post('/',async(req,res)=>{
         });
         const salt =await bcrypt.genSalt(10);
         users.password=await bcrypt.hash(users.password,salt);
-        return res.send(imgUploud)
         users['image']=imgUploud;
         users=await users.save();
         return res.send(users.generateToken()).status(200);
