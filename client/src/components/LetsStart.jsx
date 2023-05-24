@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import HamburgerMenu from './HamburgerMenu';
 
 const LetsStart = () => {
-    const decode=jwtDecode(localStorage.getItem('token'))
+  const decode={}
     const [inputs, setInputs] = useState([{ name: "",link:"",description:"" }]);
     const [pageColor, setPageColor] = useState('rgb(64 64 64)');
     const navigate=useNavigate()
@@ -34,6 +34,7 @@ const LetsStart = () => {
                 const decode=jwtDecode(localStorage.getItem('token'))
                 const submitValues=await axios.post(`https://treelink-server.onrender.com/api/links`,{nameUser:decode.name,name:inputs[i].name,link:inputs[i].link,description:inputs[i].description})
               }
+              const decode=jwtDecode(localStorage.getItem('token'))
               const submitValues=await axios.put(`https://treelink-server.onrender.com/api/UpdatePageColor`,{pageColor:pageColor,name:decode.name})
               localStorage.setItem('token',submitValues.data)   
             }
