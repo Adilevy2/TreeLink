@@ -17,7 +17,7 @@ const cors=require('cors');
 
 
 
-mongoose.connect('mongodb+srv://adilevy156:rItxYgrzJIAw89WV@cluster0.s8vuyuz.mongodb.net/?retryWrites=true/test')
+mongoose.connect('mongodb+srv://adilevy156:rItxYgrzJIAw89WV@cluster0.s8vuyuz.mongodb.net/?retryWrites=true')
 .then(()=>console.log('connected to data base'))
 .catch(()=>console.log('couldnt connect to data base '));
 
