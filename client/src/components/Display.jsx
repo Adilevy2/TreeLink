@@ -22,7 +22,7 @@ const Display = () => {
            else{
                navigate('/')
            }
-        const submit=await axios.get(`http://localhost:4905/api/getUserLinks/${decode.name}`)
+        const submit=await axios.get(`https://treelink.onrender.com/api/getUserLinks/${decode.name}`)
         setData(submit.data)}
         getData()
     }, []);
@@ -50,7 +50,7 @@ const Display = () => {
             <HamburgerMenu/>
 
             </div>
-            <p className='text-white mt-8 mb-10'><span className='font-bold mr-6 text-black'>link to your page : </span><a className='hover:underline' href={`http://localhost:3000/showCase/${name}`}> http://localhost:3000/showCase/{name}</a></p>
+            <p className='text-white mt-8 mb-10'><span className='font-bold mr-6 text-black'>link to your page : </span><a className='hover:underline' href={`http://localhost:3000/showCase/${name}`}> https://main--glistening-mermaid-92ee50.netlify.app//showCase/{name}</a></p>
         </div>
     </div>
             </div>

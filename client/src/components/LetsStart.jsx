@@ -5,7 +5,6 @@ import { useNavigate } from 'react-router-dom';
 import HamburgerMenu from './HamburgerMenu';
 
 const LetsStart = () => {
-  const decode={}
     const [inputs, setInputs] = useState([{ name: "",link:"",description:"" }]);
     const [pageColor, setPageColor] = useState('rgb(64 64 64)');
     const [name, setName] = useState('');
@@ -48,8 +47,9 @@ const LetsStart = () => {
     useEffect(() => {
       async function getData(){
         if(localStorage.getItem('token')){
-          console.log((localStorage.getItem('token')))
-          decode=jwtDecode(localStorage.getItem('token'))
+          // console.log(jwtDecode(localStorage.getItem('token')))
+          const decode=jwtDecode(localStorage.getItem('token'))
+          console.log(decode)
           setName(decode.name)
         }
         else{

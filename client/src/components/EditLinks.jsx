@@ -52,7 +52,7 @@ const EditLinks = () => {
             else{
            navigate('/')
        }
-       const submitValues=await axios.put(`https://treelink.onrender.com/UpdatePageColor`,{pageColor:pageColor,name:decode.name})
+       const submitValues=await axios.put(`https://treelink.onrender.com/api/updatePageColor`,{pageColor:pageColor,name:decode.name})
        localStorage.setItem('token',submitValues.data)   ;
        window.location.reload(false);
     }
