@@ -30,7 +30,6 @@ const SignUp = () => {
         try{
             e.preventDefault()
             formik.values['image']=image;
-            console.log(formik.values)
             const submit=await axios.post('https://treelink-server.onrender.com/api/signUp',formik.values)
             if(submit.data=='name allready taken')
             return setMessage(<p className="font-medium text-red-500 hover:text-red-600">name allready taken</p>)
@@ -40,8 +39,6 @@ const SignUp = () => {
             return setMessage(<p className="font-medium text-red-500 hover:text-red-600">password should contain at least 1 uppercase character</p>)
             else{
                 localStorage.setItem('token',JSON.stringify(submit.data)) 
-                console.log(submit.data)
-                console.log(localStorage.getItem('token'))
                 navigate('/letsStart')
             }
         }

@@ -47,9 +47,7 @@ const LetsStart = () => {
     useEffect(() => {
       async function getData(){
         if(localStorage.getItem('token')){
-          // console.log(jwtDecode(localStorage.getItem('token')))
           const decode=jwtDecode(localStorage.getItem('token'))
-          console.log(decode)
           setName(decode.name)
         }
         else{
@@ -71,7 +69,7 @@ const LetsStart = () => {
         <label className='text-xl mt-6 mb-2 text-center font-mono font-semibold text-slate-200'>First, Let's choose a color for your page(optional)</label>
            <input onChange={(ev)=>setPageColor(ev.target.value)} type='color' className='border-solid border-2 border-slate-400 hover:border-slate-500 rounded-md w-24 h-10'></input>
            <div className='mt-8 w-full '>
-        <form className='grid place-items-center' onSubmit={(ev)=>handleSubmit(ev)}>
+        <form className='grid place-items-center pb-20' onSubmit={(ev)=>handleSubmit(ev)}>
         <div className='w-full'>
 
         {inputs.map((input, i) => (
@@ -88,7 +86,7 @@ const LetsStart = () => {
       ))}
       </div>
       <button onClick={()=>handleAddInput()} type="button" className="inline-flex w-full justify-center rounded-md border border-gray-300 bg-white px-4 py-2 text-base font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">Add another link</button>
-      <button type='submit' className="transition ease-in-out duration-300 hover:-translate-y-1 hover:scale-110 w-72 mt-8 order-last whitespace-nowrap rounded-md border border-transparent bg-gray-400 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-gray-500">Submit Links</button>
+      <button type='submit' className=" transition ease-in-out duration-300 hover:-translate-y-1 hover:scale-110 w-72 mt-8 order-last whitespace-nowrap rounded-md border border-transparent bg-gray-400 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-gray-500">Submit Links</button>
                 </form>
       </div>
       </div>
